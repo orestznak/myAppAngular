@@ -5,8 +5,8 @@ import { RouterOutlet } from '@angular/router';
 import { IProduct } from './models/product';
 import { ProductComponent } from './components/product/product.component';
 import { CommonModule } from '@angular/common';
-// import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.services';
+
 
 @Component({
   selector: 'app-root',
@@ -27,15 +27,10 @@ export class AppComponent implements OnInit{
           }
 
   ngOnInit(): void {
-    this.productsService.getAll().subscribe( products=>{
+    this.productsService.getAll().subscribe((products) => {
       console.log(products)
     })
+  
   }
 
-
-
 }
-
-
-
-
