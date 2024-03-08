@@ -5,6 +5,7 @@ import {IProduct} from '../../models/product'
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html',
+    styleUrls:['./product.component.css'],
     standalone: true,
     imports:[CommonModule]
 

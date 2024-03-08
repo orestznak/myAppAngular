@@ -13,8 +13,8 @@ import { ProductComponent } from "./components/product/product.component";
     imports:[
         BrowserModule,
         RouterOutlet,
-        ProductComponent      
-    ],
+        ProductComponent
+        ],
     
     providers:[HttpClient],
     bootstrap: []
