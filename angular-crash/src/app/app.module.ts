@@ -13,11 +13,20 @@ import { ProductComponent } from "./components/product/product.component";
     imports:[
         BrowserModule,
         RouterOutlet,
+<<<<<<< Updated upstream
         ProductComponent
         ],
+=======
+        ProductComponent,
+        
+            
+    ],
+>>>>>>> Stashed changes
     
     providers:[HttpClient],
     bootstrap: []
 })
 
-export class AppModule{}
+export class AppModule{
+    
+}

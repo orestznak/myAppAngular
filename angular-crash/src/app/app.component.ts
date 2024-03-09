@@ -33,6 +33,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
+<<<<<<< Updated upstream
     this.loading = true
     this.products$ = this.productsService.getAll().pipe(
       tap(() => this.loading =false)
@@ -46,6 +47,14 @@ export class AppComponent implements OnInit{
     //     // console.log(products)
     //   }
     // })
+=======
+    this.productsService.getAll().subscribe({
+      next: products => {
+        console.log(products)
+      }
+
+    })
+>>>>>>> Stashed changes
   
   }
 
