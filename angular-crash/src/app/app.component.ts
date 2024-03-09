@@ -7,14 +7,14 @@ import { ProductComponent } from './components/product/product.component';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
-import { runInThisContext } from 'vm';
 import { Observable, tap } from 'rxjs';
+import { GlobalErrorComponent } from './components/global-error/global-error.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent,CommonModule, HttpClientModule],
+  imports: [RouterOutlet, ProductComponent,CommonModule, HttpClientModule,GlobalErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-<<<<<<< Updated upstream
+
     this.loading = true
     this.products$ = this.productsService.getAll().pipe(
       tap(() => this.loading =false)
@@ -47,14 +47,13 @@ export class AppComponent implements OnInit{
     //     // console.log(products)
     //   }
     // })
-=======
-    this.productsService.getAll().subscribe({
-      next: products => {
-        console.log(products)
-      }
 
-    })
->>>>>>> Stashed changes
+    // this.productsService.getAll().subscribe({
+    //   next: products => {
+    //     console.log(products)
+    //   }
+
+    // })
   
   }
 

@@ -5,6 +5,7 @@ import { urlToHttpOptions } from "node:url";
 
 import { catchError, delay, Observable, throwError } from "rxjs";
 import { IProduct } from "../models/product";
+import { ErrorServices } from "./error.services";
 
 
 
@@ -15,7 +16,10 @@ import { IProduct } from "../models/product";
 export class ProductsService{
     
  
-    constructor(private http: HttpClient){
+    constructor(
+        private http: HttpClient,
+        private errorService: ErrorServices
+        ){
 
     }
     
@@ -32,6 +36,8 @@ export class ProductsService{
         )          
     }
     private errorHandler(error: HttpErrorResponse){
+        this.errorService.handle(error.message)
+
         return throwError(()=> error.message)
 
     }
