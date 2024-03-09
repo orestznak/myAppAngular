@@ -1,10 +1,11 @@
-<div *ngIf="products" class="max-w-2xl container mx-auto pt-5">
+<div  class="max-w-2xl container mx-auto pt-5">
     <h1>{{title}}</h1>
+    <p *ngIf="loading" class="loading">Loading...</p>
 
     
 
     <!-- <app-product [product]="products[0]" ></app-product> -->
-    <app-product *ngFor="let product of products; let i = index"
+    <app-product *ngFor="let product of products$ | async; let i = index"
     [product]="product"
     ></app-product>
 

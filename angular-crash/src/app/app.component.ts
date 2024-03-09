@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { runInThisContext } from 'vm';
+import { Observable, tap } from 'rxjs';
 
 
 @Component({
@@ -21,21 +22,30 @@ import { runInThisContext } from 'vm';
 
 export class AppComponent implements OnInit{
     
-  title = 'angular-crash'
+  title = 'angular app'
 
-  products: IProduct[] = []
+  // products: IProduct[] = []
+  products$: Observable<IProduct[]>
+  loading= false
 
   constructor(private productsService: ProductsService){
 
   }
 
   ngOnInit(): void {
-    this.productsService.getAll().subscribe({
-      next: products => {
-        this.products = products
-        console.log(products)
-      }
-    })
+    this.loading = true
+    this.products$ = this.productsService.getAll().pipe(
+      tap(() => this.loading =false)
+    )
+
+    // this.productsService.getAll().subscribe({
+    //   next: products => {
+    //     this.products = products
+
+    //     this.loading = false
+    //     // console.log(products)
+    //   }
+    // })
   
   }
 
