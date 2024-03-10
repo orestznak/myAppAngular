@@ -8,6 +8,7 @@ import { ErrorServices } from "../../services/error.services";
     templateUrl:'./global-error.component.html',
     styleUrls: ['./global-error.component.css'],
     imports:[CommonModule]
+
 })
 
 export class GlobalErrorComponent implements OnInit{

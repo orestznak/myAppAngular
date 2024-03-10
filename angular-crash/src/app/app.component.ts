@@ -9,12 +9,22 @@ import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
+import { FormsModule } from '@angular/forms';
+import { FilterProductsPipe } from './pipes/filter-products.pipe';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent, CommonModule, HttpClientModule, GlobalErrorComponent],
+  imports: [RouterOutlet, 
+    ProductComponent, 
+    CommonModule, 
+    HttpClientModule, 
+    GlobalErrorComponent,
+    FormsModule,
+    FilterProductsPipe
+  
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   
@@ -27,6 +37,7 @@ export class AppComponent implements OnInit{
   // products: IProduct[] = []
   products$: Observable<IProduct[]>
   loading= false
+  term = ''
 
   constructor(private productsService: ProductsService){
 
