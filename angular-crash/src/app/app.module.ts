@@ -1,7 +1,9 @@
+import { CommonModule } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterOutlet } from '@angular/router';
+import { GlobalErrorComponent } from "./components/global-error/global-error.component";
 
 import { ProductComponent } from "./components/product/product.component";
 
@@ -13,16 +15,12 @@ import { ProductComponent } from "./components/product/product.component";
     imports:[
         BrowserModule,
         RouterOutlet,
-<<<<<<< Updated upstream
-        ProductComponent
-        ],
-=======
+        // CommonModule,
         ProductComponent,
-        
-            
-    ],
->>>>>>> Stashed changes
-    
+        // GlobalErrorComponent
+        ],
+
+     
     providers:[HttpClient],
     bootstrap: []
 })

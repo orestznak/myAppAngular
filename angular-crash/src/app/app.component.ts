@@ -14,7 +14,7 @@ import { GlobalErrorComponent } from './components/global-error/global-error.com
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductComponent,CommonModule, HttpClientModule,GlobalErrorComponent],
+  imports: [RouterOutlet, ProductComponent, CommonModule, HttpClientModule, GlobalErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   
