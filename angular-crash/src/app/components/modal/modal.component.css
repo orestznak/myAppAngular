@@ -1,0 +1,27 @@
+.modal{
+    background-color: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+
+
+}
+
+.modal-form{
+    width: 500px;
+    position: absolute;
+    top: 0px;
+    padding: 6px;
+    background-color: rgb(255, 255, 255);
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.modal-title{
+    text-align: center;
+    margin-bottom: 2px;
+
+}

@@ -11,6 +11,7 @@ import { Observable, tap } from 'rxjs';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
 import { FormsModule } from '@angular/forms';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @Component({
@@ -22,8 +23,8 @@ import { FilterProductsPipe } from './pipes/filter-products.pipe';
     HttpClientModule, 
     GlobalErrorComponent,
     FormsModule,
-    FilterProductsPipe
-  
+    FilterProductsPipe,
+    ModalComponent 
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
