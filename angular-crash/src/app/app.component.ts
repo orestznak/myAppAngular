@@ -9,9 +9,10 @@ import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
+import { CreateProductComponentComponent } from './components/create-product.component/create-product.component.component';
 
 
 @Component({
@@ -24,7 +25,9 @@ import { ModalComponent } from './components/modal/modal.component';
     GlobalErrorComponent,
     FormsModule,
     FilterProductsPipe,
-    ModalComponent 
+    ModalComponent,
+    CreateProductComponentComponent,
+    ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
