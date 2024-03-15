@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-product',
@@ -13,7 +13,10 @@ export class CreateProductComponentComponent implements OnInit {
   
   form = new FormGroup( 
     {
-      title: new FormControl<string>('')
+      title: new FormControl<string>('',[
+        Validators.required,
+        Validators.minLength(6)
+      ])
     }
   )
 
