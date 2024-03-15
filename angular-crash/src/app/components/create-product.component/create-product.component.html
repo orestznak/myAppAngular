@@ -1,4 +1,4 @@
-<form formGroup="form" (ngSubmit)="submit()">
+<form [formGroup]="productform" (ngSubmit)="submit()">
   <input type="text"
   formControlName="title"
     placeholder="Product name">

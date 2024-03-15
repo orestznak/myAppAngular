@@ -12,7 +12,7 @@ import { GlobalErrorComponent } from './components/global-error/global-error.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
-import { CreateProductComponentComponent } from './components/create-product.component/create-product.component.component';
+import { CreateProductComponent } from './components/create-product.component/create-product.component';
 
 
 @Component({
@@ -26,7 +26,7 @@ import { CreateProductComponentComponent } from './components/create-product.com
     FormsModule,
     FilterProductsPipe,
     ModalComponent,
-    CreateProductComponentComponent,
+    CreateProductComponent,
     ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
@@ -43,9 +43,7 @@ export class AppComponent implements OnInit{
   loading= false
   term = ''
 
-  constructor(private productsService: ProductsService){
-
-  }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
 
