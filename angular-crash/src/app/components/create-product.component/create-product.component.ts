@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {  FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ModalService } from '../../services/modal.service';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-create-product',
@@ -12,7 +14,11 @@ import {  FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule }
   styleUrl: './create-product.component.css'
 })
 export class CreateProductComponent implements OnInit {
-  
+  constructor(private productService: ProductsService,
+    private modalService: ModalService) {
+
+  }
+
   productform = new FormGroup( 
     {
       title : new FormControl<string>('',[
@@ -27,13 +33,27 @@ export class CreateProductComponent implements OnInit {
   }
 
 
-  constructor() {}
+  
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
   }
   submit() {
     console.log(this.productform.value)
+    this.productService.create({
+      title: this.productform.value.title as string,
+      price: 13.5,
+      description: 'lorem ipsum set',
+      image: 'https://i.pravatar.cc',
+      category: 'electronic',
+      rating: {
+        rate: 42,
+        count: 1
+      }
+
+    }).subscribe(()=>{
+      this.modalService.close()
+    })
   }
 
   

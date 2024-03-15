@@ -1,7 +1,9 @@
 <form [formGroup]="productform" (ngSubmit)="submit()">
   <input type="text"
   formControlName="title"
-    placeholder="Product name">
+    placeholder="Product name"
+    appFocus
+    >
 
     <p class="modalError"
     *ngIf="title.errors?.minlength && title.touched" >

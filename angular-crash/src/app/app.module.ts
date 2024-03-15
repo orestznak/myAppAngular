@@ -7,6 +7,7 @@ import { RouterOutlet } from '@angular/router';
 import { GlobalErrorComponent } from "./components/global-error/global-error.component";
 
 import { ProductComponent } from "./components/product/product.component";
+import { FocusDirective } from "./directives/focus.directive";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { ProductComponent } from "./components/product/product.component";
         // CommonModule,
         ProductComponent,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        FocusDirective
         // GlobalErrorComponent
         ],
 

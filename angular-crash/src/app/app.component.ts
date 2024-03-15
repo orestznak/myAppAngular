@@ -14,6 +14,7 @@ import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateProductComponent } from './components/create-product.component/create-product.component';
 import { ModalService } from './services/modal.service';
+import { FocusDirective } from './directives/focus.directive';
 
 
 @Component({
@@ -28,7 +29,8 @@ import { ModalService } from './services/modal.service';
     FilterProductsPipe,
     ModalComponent,
     CreateProductComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // FocusDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -40,12 +42,12 @@ export class AppComponent implements OnInit{
   title = 'angular app'
 
   // products: IProduct[] = []
-  products$: Observable<IProduct[]>
+  // products$: Observable<IProduct[]>
   loading= false
   term = ''
 
   constructor(
-    private productsService: ProductsService,
+    public productsService: ProductsService,
     public modalService: ModalService
     
     ) {}
@@ -53,9 +55,10 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
 
     this.loading = true
-    this.products$ = this.productsService.getAll().pipe(
-      tap(() => this.loading =false)
-    )
+    
+    this.productsService.getAll().subscribe(
+      ()=> {this.loading = false
+      })
 
     // this.productsService.getAll().subscribe({
     //   next: products => {
