@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateProductComponent } from './components/create-product.component/create-product.component';
+import { ModalService } from './services/modal.service';
 
 
 @Component({
@@ -43,7 +44,11 @@ export class AppComponent implements OnInit{
   loading= false
   term = ''
 
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    public modalService: ModalService
+    
+    ) {}
 
   ngOnInit(): void {
 

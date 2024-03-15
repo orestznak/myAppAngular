@@ -26,3 +26,13 @@
     width: auto;
      
 }
+
+.openModal{
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px 4px;
+}

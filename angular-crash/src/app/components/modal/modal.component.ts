@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Component, Input } from '@angular/core';
 export class ModalComponent {
   @Input()title: string;
 
-  constructor() {}
+  constructor(public modalService: ModalService) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

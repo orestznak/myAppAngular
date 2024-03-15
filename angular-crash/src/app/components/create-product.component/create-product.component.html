@@ -3,6 +3,11 @@
   formControlName="title"
     placeholder="Product name">
 
+    <p class="modalError"
+    *ngIf="title.errors?.minlength && title.touched" >
+      Please fill title field width min length. Now {{ title.value.length}}
+    </p>
+
     <button 
       type="submit"
       class="create-button"

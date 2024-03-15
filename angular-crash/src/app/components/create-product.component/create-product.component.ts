@@ -6,8 +6,8 @@ import {  FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule }
   selector: 'app-create-product',
   standalone: true,
   imports: [CommonModule,
-  ReactiveFormsModule,
-  FormsModule],
+            ReactiveFormsModule,
+            FormsModule],
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.css'
 })
@@ -21,6 +21,10 @@ export class CreateProductComponent implements OnInit {
       ])
     }
   )
+
+  get title() {
+    return this.productform.controls.title as FormControl
+  }
 
 
   constructor() {}
