@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateProductComponent } from './components/create-product.component/create-product.component';
 import { ProductPageComponent } from './components/pages/product-page/product-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 
 
@@ -27,7 +28,8 @@ import { ProductPageComponent } from './components/pages/product-page/product-pa
     ModalComponent,
     CreateProductComponent,
     ReactiveFormsModule,
-    ProductPageComponent
+    ProductPageComponent,
+    NavigationComponent
     // FocusDirective
   ],
   templateUrl: './app.component.html',

@@ -7,7 +7,8 @@ import { ModalComponent } from "../../modal/modal.component";
 import { CreateProductComponent } from "../../create-product.component/create-product.component";
 import { GlobalErrorComponent } from '../../global-error/global-error.component';
 import { FilterProductsPipe } from '../../../pipes/filter-products.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -15,13 +16,17 @@ import { FormsModule } from '@angular/forms';
     standalone: true,
     templateUrl: './product-page.component.html',
     styleUrl: './product-page.component.css',
-    imports: [CommonModule,
-        ProductComponent, 
-        ModalComponent, 
-        CreateProductComponent,
-        GlobalErrorComponent,
-        FilterProductsPipe,
-        FormsModule
+    imports: [
+      ProductComponent, 
+      CommonModule, 
+      HttpClientModule, 
+      GlobalErrorComponent,
+      FormsModule,
+      FilterProductsPipe,
+      ModalComponent,
+      CreateProductComponent,
+      ReactiveFormsModule,
+      ProductPageComponent
         
       ]
 })

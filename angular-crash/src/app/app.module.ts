@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterOutlet } from '@angular/router';
 import { GlobalErrorComponent } from "./components/global-error/global-error.component";
+import { NavigationComponent } from "./components/navigation/navigation.component";
 import { ProductPageComponent } from "./components/pages/product-page/product-page.component";
 
 import { ProductComponent } from "./components/product/product.component";
@@ -12,7 +13,7 @@ import { FocusDirective } from "./directives/focus.directive";
 
 @NgModule({
     declarations: [
-         
+        
     ],
 
     imports:[
@@ -23,7 +24,8 @@ import { FocusDirective } from "./directives/focus.directive";
         ReactiveFormsModule,
         FormsModule,
         FocusDirective,
-        ProductPageComponent
+        ProductPageComponent,
+        NavigationComponent
         // GlobalErrorComponent
         ],
 
