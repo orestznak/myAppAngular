@@ -24,6 +24,13 @@ export class CreateProductComponent implements OnInit {
       title : new FormControl<string>('',[
         Validators.required,
         Validators.minLength(6)
+      ]),
+      price : new FormControl<number>(0,[
+        Validators.required
+      ]),
+      description : new FormControl<string>('',[
+        Validators.required,
+        Validators.minLength(6)
       ])
     }
   )
@@ -42,8 +49,8 @@ export class CreateProductComponent implements OnInit {
     console.log(this.productform.value)
     this.productService.create({
       title: this.productform.value.title as string,
-      price: 13.5,
-      description: 'lorem ipsum set',
+      price: this.productform.value.price as number,
+      description: this.productform.value.description as string,
       image: 'https://i.pravatar.cc',
       category: 'electronic',
       rating: {

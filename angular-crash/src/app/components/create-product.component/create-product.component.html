@@ -1,4 +1,5 @@
-<form [formGroup]="productform" (ngSubmit)="submit()">
+<form class="create-form" [formGroup]="productform" (ngSubmit)="submit()">
+  
   <input type="text"
   formControlName="title"
     placeholder="Product name"
@@ -6,9 +7,23 @@
     >
 
     <p class="modalError"
-    *ngIf="title.errors?.minlength && title.touched" >
-      Please fill title field width min length. Now {{ title.value.length}}
+      *ngIf="title.errors?.minlength && title.touched" >
+        Please fill title field width min length. Now {{ title.value.length}}
     </p>
+
+    <input type="number"
+      formControlName="price"
+      placeholder="Product price"
+      
+    >
+
+    <input type="string"
+      formControlName="description"
+      placeholder="Product description"
+      
+    >
+
+    
 
     <button 
       type="submit"

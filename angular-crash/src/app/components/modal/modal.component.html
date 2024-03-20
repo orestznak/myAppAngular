@@ -1,7 +1,9 @@
 <div class="modal"
-(click)="modalService.close()"
+    (click)="modalService.close()"
 >
-    <div class="modal-form">
+    <div class="modal-form" 
+        (click)="$event.stopPropagation()">
+        
         <h1 class="modal-title">
             {{title}}
         </h1>

@@ -1,7 +1,12 @@
+.create-form{
+    display: flex;
+    flex-direction: column;
+}
+
 input{
     border: 2px grey solid;
     padding: 2px 4px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 .create-button{
