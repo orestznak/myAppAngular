@@ -1,12 +1,13 @@
-<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
+<div class="card-product">
     
     <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-6">
-    
-    <h2 class="mb-2 text-mb text center">{{product.title}}</h2>
+
+    <div class="product-discription">
+        <h2 class="product-title">{{product.title}}</h2>
     <p> Price: <span class="font-bold">{{product.price }}</span></p>
 
     <button 
-        class="border py-2 px-4 rounded bg-yellow-400"
+        class="product-btn"
         [ngClass]="{
             'bg-yellow-400': !details,
             'bg-blue-400': !details
@@ -26,5 +27,8 @@
 
         </span></p>
     </div>
+    </div>
+    
+    
 
 </div>

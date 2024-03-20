@@ -1,0 +1,37 @@
+img{
+    display: block;
+    width: 100px;
+}
+
+.card-product{
+    width: 200px;
+
+
+    padding: 5px 5px;
+    border: 2px grey solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+}
+
+.product-discription{
+
+}
+
+.product-title{
+    margin-bottom: 2px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+.product-btn{
+    display: block;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: darkorange;
+    margin: 0 auto;
+}
