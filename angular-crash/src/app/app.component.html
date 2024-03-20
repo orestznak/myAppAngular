@@ -1,37 +1,9 @@
 <app-global-error ></app-global-error>
 
 <div  class="main-container">
-    <h1 class="title">{{title}}</h1>
-    <p *ngIf="loading" class="loading">Loading...</p>
-
-    <input type="text"
-    class="filter"
-    placeholder="Filter product..."
-    [(ngModel)]="term"
-    >
-        <!-- <app-product [product]="products[0]" ></app-product> -->
     
-    <div *ngIf="productsService.products">
-        <app-product 
-            *ngFor="let product of productsService.products | filterProducts: term; let i = index"  [product]="product"
-        >
-        </app-product>
-    </div>
-
-    <app-modal *ngIf="modalService.isVisible$ | async" title="Create new product">
-        <app-create-product>
-
-        </app-create-product> 
-        
-    </app-modal>
-
-    <button 
-    (click)="modalService.open()"
-    class="openModal">
-
-        +
-
-    </button>
+    <router-outlet></router-outlet>
+    
 
 </div>
 
