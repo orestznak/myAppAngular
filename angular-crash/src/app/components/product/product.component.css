@@ -17,6 +17,10 @@ img{
     margin-bottom: 5px;
 
 }
+.card-product:hover,
+.card-product:focus{
+    box-shadow: 4px 6px  rgb(90, 90, 90);
+}
 
 .product-discription{
 

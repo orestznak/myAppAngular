@@ -4,7 +4,6 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterOutlet } from '@angular/router';
-import { GlobalErrorComponent } from "./components/global-error/global-error.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
 import { ProductPageComponent } from "./components/pages/product-page/product-page.component";
 

@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+    display: flex;
+    
+}
+li{
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+}
+
+li:focus,
+li:hover{
+    background-color: orange;
+    color: white;
+}
