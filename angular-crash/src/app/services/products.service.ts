@@ -45,6 +45,11 @@ export class ProductsService{
         )
     }
 
+    getProduct(productId: number):Observable<IProduct>{
+        return this.http.get<IProduct>( `https://fakestoreapi.com/products/${productId}`)
+       
+    }
+
     private errorHandler(error: HttpErrorResponse){
         this.errorService.handle(error.message)
 
