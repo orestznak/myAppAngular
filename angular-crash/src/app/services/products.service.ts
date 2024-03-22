@@ -22,6 +22,7 @@ export class ProductsService{
     }
     
     products: IProduct[] = []
+    product: IProduct
 
     getAll(): Observable<IProduct[]> {
         return this.http.get<IProduct[]>( 'https://fakestoreapi.com/products',{
@@ -36,6 +37,16 @@ export class ProductsService{
         )          
     }
 
+    getProduct(productId: number):Observable<IProduct>{
+        return this.http.get<IProduct>( `https://fakestoreapi.com/products/${productId}`)
+        .pipe(
+            delay(2000),
+            retry(2),
+            tap(product => this.product = product),
+            catchError(this.errorHandler.bind(this))
+        )
+    }
+
     create(product: IProduct):Observable<IProduct>{
         return this.http.post<IProduct>( 'https://fakestoreapi.com/products',product)
         .pipe(
@@ -45,10 +56,7 @@ export class ProductsService{
         )
     }
 
-    getProduct(productId: number):Observable<IProduct>{
-        return this.http.get<IProduct>( `https://fakestoreapi.com/products/${productId}`)
-       
-    }
+    
 
     private errorHandler(error: HttpErrorResponse){
         this.errorService.handle(error.message)

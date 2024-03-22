@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent {
-  constructor(private router: Router) {
+  constructor(private route:ActivatedRoute,
+              private router: Router) {
 
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route])
+    this.router.navigate([route],{queryParams:{id: 1}})
   }
 }
 
-// {queryParams:{id: }}
+// 

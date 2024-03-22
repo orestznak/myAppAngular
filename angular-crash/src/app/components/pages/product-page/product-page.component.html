@@ -8,7 +8,8 @@
     >
         <!-- <app-product [product]="products[0]" ></app-product> -->
     
-    <div *ngIf="productsService.products">
+    <div *ngIf="productsService.products"
+    >
         <app-product 
         
             *ngFor="let product of productsService.products | filterProducts: term; let i = index"  [product]="product"

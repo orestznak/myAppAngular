@@ -9,6 +9,7 @@ import { GlobalErrorComponent } from '../../global-error/global-error.component'
 import { FilterProductsPipe } from '../../../pipes/filter-products.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from '../../navigation/navigation.component';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
       ModalComponent,
       CreateProductComponent,
       ReactiveFormsModule,
-      ProductPageComponent
+      // ProductPageComponent,
+      NavigationComponent
         
       ]
 })
