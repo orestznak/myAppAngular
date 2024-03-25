@@ -10,13 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent {
-  constructor(private route:ActivatedRoute,
+  constructor(public route:ActivatedRoute,
               private router: Router) {
 
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route],{queryParams:{id: 1}})
+    this.router.navigate([route],{queryParams:{id:3}})
   }
 }
 

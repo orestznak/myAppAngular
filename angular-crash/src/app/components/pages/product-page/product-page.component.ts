@@ -10,6 +10,8 @@ import { FilterProductsPipe } from '../../../pipes/filter-products.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from '../../navigation/navigation.component';
+import { query } from 'express';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -42,25 +44,33 @@ export class ProductPageComponent implements OnInit{
 
   constructor(
     public productsService: ProductsService,
-    public modalService: ModalService
+    public modalService: ModalService,
+    public activatedRoute: ActivatedRoute
+    // public navigateTo: NavigationComponent
     
     ) {}
 
   ngOnInit(): void {
 
     this.loading = true
-    
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      const id = params['id'];
+      
+      console.log(id);
+    });
     // this.productsService.getAll().subscribe(
     //   ()=> {this.loading = false
     //   })
-
+   
+    
     this.productsService.getAll().subscribe({
       next: () => {
         this.loading = false
         // console.log(products)
       }
     })
-
+    
     // this.productsService.getAll().subscribe({
     //   next: products => {
     //     console.log(products)

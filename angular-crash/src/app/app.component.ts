@@ -29,7 +29,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     CreateProductComponent,
     ReactiveFormsModule,
     ProductPageComponent,
-    NavigationComponent,
+    NavigationComponent
     
     // FocusDirective
   ],

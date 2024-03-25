@@ -24,7 +24,7 @@ import { FocusDirective } from "./directives/focus.directive";
         FormsModule,
         FocusDirective,
         ProductPageComponent,
-        NavigationComponent
+        // NavigationComponent
         // GlobalErrorComponent
         ],
 

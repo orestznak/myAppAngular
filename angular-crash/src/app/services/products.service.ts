@@ -38,14 +38,18 @@ export class ProductsService{
     }
 
     getProduct(productId: number):Observable<IProduct>{
-        return this.http.get<IProduct>( `https://fakestoreapi.com/products/${productId}`)
+        return this.http.get<IProduct>( `https://fakestoreapi.com/products/${productId}`
+        )
         .pipe(
             delay(2000),
             retry(2),
             tap(product => this.product = product),
+            
             catchError(this.errorHandler.bind(this))
         )
     }
+
+  
 
     create(product: IProduct):Observable<IProduct>{
         return this.http.post<IProduct>( 'https://fakestoreapi.com/products',product)
@@ -55,6 +59,8 @@ export class ProductsService{
             )
         )
     }
+
+    
 
     
 
