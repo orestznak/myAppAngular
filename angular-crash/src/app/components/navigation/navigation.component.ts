@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { products } from '../../data/products';
 
 @Component({
   selector: 'app-navigation',
@@ -16,7 +17,7 @@ export class NavigationComponent {
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route],{queryParams:{id:3}})
+    this.router.navigate([route],{queryParams:{id:6}})
   }
 }
 

@@ -45,8 +45,8 @@ export class ProductPageComponent implements OnInit{
   constructor(
     public productsService: ProductsService,
     public modalService: ModalService,
-    public activatedRoute: ActivatedRoute
-    // public navigateTo: NavigationComponent
+    public activatedRoute: ActivatedRoute,
+    public navigateTo: NavigationComponent
     
     ) {}
 

@@ -5,6 +5,7 @@ import { ModalService } from '../../../services/modal.service';
 import { ProductComponent } from '../../product/product.component';
 import { NavigationComponent } from '../../navigation/navigation.component';
 import { IProduct } from '../../../models/product';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -23,6 +24,7 @@ export class ProductDetailsComponent implements OnInit{
   constructor(
     public productService: ProductsService,
     public modalService: ModalService,
+    private route: ActivatedRoute
     ) {}
 
     // loading= false
@@ -34,6 +36,15 @@ export class ProductDetailsComponent implements OnInit{
     // this.productsService.getAll().subscribe(
     //   ()=> {this.loading = false
     //   })
+
+    this.route.paramMap.subscribe(params => {
+      console.log(params.get('id'))
+      this.productService.getProduct(Number(params.get('id'))).subscribe(
+        product => {
+          this.product = product
+        }
+      )
+    })
 
     this.productService.getProduct(3).subscribe({
       
