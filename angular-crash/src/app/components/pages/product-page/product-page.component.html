@@ -11,7 +11,7 @@
     <div *ngIf="productsService.products"
     >
         <app-product 
-        (click)="navigateTo('product')"
+       
 
         
             *ngFor="let product of productsService.products | filterProducts: term; let i = index"  [product]="product"

@@ -12,13 +12,14 @@ import { products } from '../../data/products';
 })
 export class NavigationComponent {
   constructor(public route:ActivatedRoute,
-              private router: Router) {
+              private router: Router
+              ) {
 
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route],{queryParams:{id:6}})
+    this.router.navigate([route],{queryParams:{id: Number}})
   }
 }
 
-// 
+// {queryParams:{'id'}}

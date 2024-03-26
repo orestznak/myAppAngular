@@ -41,12 +41,14 @@ export class ProductPageComponent implements OnInit{
   // products$: Observable<IProduct[]>
   loading= false
   term = ''
+  route: any;
+  product: import("d:/myAppAngular/angular-crash/src/app/models/product").IProduct;
 
   constructor(
     public productsService: ProductsService,
     public modalService: ModalService,
     public activatedRoute: ActivatedRoute,
-    public navigateTo: NavigationComponent
+    // public navigateTo: NavigationComponent
     
     ) {}
 
@@ -54,11 +56,12 @@ export class ProductPageComponent implements OnInit{
 
     this.loading = true
 
-    this.activatedRoute.queryParams.subscribe(params => {
-      const id = params['id'];
+    // this.activatedRoute.queryParams.subscribe(params => {
+    //   const id = params['id'];
       
-      console.log(id);
-    });
+    //   console.log(id);
+    // });
+    
     // this.productsService.getAll().subscribe(
     //   ()=> {this.loading = false
     //   })
@@ -70,6 +73,8 @@ export class ProductPageComponent implements OnInit{
         // console.log(products)
       }
     })
+
+    
     
     // this.productsService.getAll().subscribe({
     //   next: products => {

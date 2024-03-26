@@ -37,26 +37,36 @@ export class ProductDetailsComponent implements OnInit{
     //   ()=> {this.loading = false
     //   })
 
-    this.route.paramMap.subscribe(params => {
-      console.log(params.get('id'))
-      this.productService.getProduct(Number(params.get('id'))).subscribe(
-        product => {
-          this.product = product
-        }
-      )
-    })
-
-    this.productService.getProduct(3).subscribe({
+    // this.route.paramMap.subscribe(params => {
+    //   console.log(params.get('id'))
+    // this.productService.getProduct(Number(params.get('id'))).subscribe({
       
-          next: product => {
-            this.loading = false
-            this.product = product
-            // console.log(product)
-          }
-        
-    })
-
+    //   next: product => {
+    //     this.loading = false
+    //     this.product = product
+    //     // console.log(product)
+    //   }
     
+    //   })
+    // })
 
-}
+
+    //   this.productService.getProduct(Number(params.get('id'))).subscribe(
+    //     product => {
+    //       this.product = product
+    //     }
+    //   )
+    // })
+
+    // this.productService.getProduct(3).subscribe({
+      
+    //       next: product => {
+    //         this.loading = false
+    //         this.product = product
+    //         // console.log(product)
+    //       }
+        
+    // })
+
+  }
 }
